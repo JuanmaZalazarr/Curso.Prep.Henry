@@ -26,9 +26,9 @@ const nuevoModulo = 21 % 5 === 1;
 // No cambies los nombres de las funciones.
 
 function devolverString(str) {
-  // "Return" la string provista: str
+  // "Return" la string provista: srt
   // Tu código:
-  return 'srt';
+  return 'Henry';
 }
 
 function suma(x, y) {
@@ -70,13 +70,13 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-if (str1.lenght === str2.lenght){
-  return true
-} else {
-  return false
+  if str1.lenght === str2.lenght {
+    return true
+  } else {
+    return false
+  }
+  }
 }
-}
-// Mas facil la anterior formula puede ser |return str1.lenght === str2.lenght|
 
 
 function menosQueNoventa(num) {
