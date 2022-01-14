@@ -32,9 +32,9 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
-  if ( status === 1 ){
+  if (status === 1){
     return "Online";
-  } else if ( status === 2 ){
+  } else if (status === 2){
     return "Away";
   } else {
     return "Offline";
@@ -67,16 +67,17 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  if (color === "blue"){
-    return "This is blue";
-  } else if (color === "red"){
-    return "This is red";
-  } else if (color === "green"){
-    return "This is green";
-  } else if (color === "orange"){
-    return "This is orange";
-  } else {
-    return "Color not found";
+  switch (color){
+    case "blue":
+      return "This is blue";
+    case "red":
+      return "This is red";
+    case "green":
+      return "This is green";
+    case "orange":
+      return "This is orange";
+    default:
+      return "Color not found"
   }
 }
 
@@ -84,10 +85,8 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero === 10){
-    return "true";
-  } else if (numero === 5){
-    return "true";
+  if (numero === 10 || numero === 5){
+    return "true"
   } else {
     return "false";
   }
@@ -98,9 +97,7 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero < 50){
-    return "true";
-  } else if (numero > 20){
+  if (numero < 50 && numero > 20){
     return "true";
   } else {
     return "false";
@@ -115,6 +112,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+
 }
 
 function fizzBuzz(numero) {
@@ -145,7 +143,11 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+if (valor == true){
+  return 'Soy verdadero'
+} else if (valor === false) {
+  return 'Soy falso';
+}
 }
 
 function tablaDelSeis(){
