@@ -86,9 +86,9 @@ function esDiezOCinco(numero) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if (numero === 10 || numero === 5){
-    return "true"
+    return true
   } else {
-    return "false";
+    return false;
   }
     
 }
@@ -98,9 +98,9 @@ function estaEnRango(numero) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if (numero < 50 && numero > 20){
-    return "true";
+    return true;
   } else {
-    return "false";
+    return false;
   }
 }
 
@@ -112,24 +112,53 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-
+if (numero === Math.floor(numero)){
+  return true;
+} else {
+  return false;
 }
+}
+
+// Lo que hace aca es que si 'numero' es igual a el 'numero redondeado con el (Math.floor)' que retorne true y sino false
+// Se puede utilizar | if (Number.isInteger(numero)) | en la primea linea.
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+if (numero % 3 === 0 && numero % 5 === 0){
+  return 'fizzbuzz'
+} else if (numero % 3 === 0) {
+  return 'fizz'
+} else if (numero % 5 === 0){
+  return 'buzz'
 }
+return numero
+}
+// Se pone primero la condicion 'fizzbuzz' para que sea la primera en que la funcion compruebe si reune esas condiciones y no al final, sino tomaria 'buzz' o 'fizz' 
+// Por que al cumplir la primera condicion lo considera como true, retorna y ya no consideraria los siguientes.
 
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos. 
-  //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
-  //Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
+  //-Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
+  //-Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
-  //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
+  //-0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+if (num1 < 0 || num2 < 0 || num3 < 0) {
+  return 'Hay negativos';
+}  else if (num1 === 0 || num2 === 0 || num3 === 0){
+  return 'Error';
+} else if (num1 > num2 && num1 > num3){
+  return 'Número 1 es mayor y positivo'
+} else if (num3 > num1 && num3 > num2) {
+ return num3 + 1;
+} else {
+  return false;
 }
+}
+// Pongo las condiciones que tiran 'Error' o 'Hay negativos' para que verifique los numeros y se cumplan las condiciones digamos ¨positivas¨
 
 function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
@@ -137,15 +166,23 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+if (numero < 2) return false;
+if (numero === 2) return true;
+for (var i=2 ; i<numero ; i++){
+  if (numero % i === 0){
+    return false;
+  }
+}
+return true;
 }
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-if (valor == true){
+if (valor === true){
   return 'Soy verdadero'
-} else if (valor === false) {
+} else {
   return 'Soy falso';
 }
 }
@@ -154,19 +191,36 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+  var array = [];
+  for (var i=0 ; i<=10 ; i++){
+    array.push(6*i); //[0, 6, 12, 18, ... ,60]
+  } return array;
 }
+// Este ejercicio es de la clase siguiente, comentaron en la clase virtual que no deberia estar en esta clase, ya que fue un contenido que no fue dado todavia.
+// El npm test no va a corregirlo.
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if (numero >= 99 && numero <= 999) {
+    return true;
+  } else {
+    return false;
+  }
 }
+// Puede hacerse con el codigo | if (numero.toString().length === 3) | se usa el ¨toString¨ para que convierta el numero recibido a un string y lo compare con lenght si los
+// caracteres cumplen 3 digitos, pero usando la logica a partir del numero 100 y menos que el numero 999, tienen 3 digitos.
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+let i = 0;
+  do {
+    i = i +1
+    numero = numero +5;
+} while (i<8)
+return numero;
 }
 
 
