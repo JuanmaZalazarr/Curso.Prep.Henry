@@ -223,7 +223,6 @@ let i = 0;
 return numero;
 }
 
-
 // No modificar nada debajo de esta línea
 // --------------------------------
 
